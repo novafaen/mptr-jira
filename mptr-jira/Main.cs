@@ -39,35 +39,17 @@ namespace mptr.jira
                 return new List<Result>(0);
             }
 
-            if (value.Length < 3)
-            {
-                return new List<Result>
-                {
-                    new Result
-                    {
-                        Title = "Search query must contain at least 3 characters",
-                        SubTitle = "Please add more to your query.",
-                        IcoPath = IconPath,
-                        Action = e =>
-                        {
-                            OpenUrl("https://www.youtube.com/watch?v=oHg5SJYRHA0");
-                            return true;
-                        },
-                    }
-                };
-            }
-
             string UserTicket = value.ToUpper();
             string FullTicketNumber = null;
             string JiraURL = null;
 
-            if (Regex.IsMatch(UserTicket, @"^\w*?-\d{3}\d*$"))
+            if (Regex.IsMatch(UserTicket, @"^\w*?-\d+$"))
             {
                 // query is probably NONDEFAULTTICKET-XXX, suggest to browse that.
                 FullTicketNumber = UserTicket;
                 JiraURL = UrlPrefix + "browse/" + FullTicketNumber;
             }
-            else if (Regex.IsMatch(UserTicket, @"^\d{3}\d*$"))
+            else if (Regex.IsMatch(UserTicket, @"^\d+$"))
             {
                 // query is only numbers, suggest with default ticket prefix.
                 FullTicketNumber = DefaultTicketPrefix + "-" + UserTicket;
