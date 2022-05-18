@@ -35,6 +35,17 @@
         <None Update="plugin.json">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
+        <None Update="settings.json">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
+  
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="robocopy /E /IM bin/Debug/netcoreapp3.1 &quot;C:\Program Files\PowerToys\modules\launcher\Plugins\mptr-jira&quot;&#xD;&#xA;powershell start-process 'C:\Program Files\PowerToys\PowerToys.exe'" />
+    </Target>
+  
+    <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+      <Exec Command="call build-events/pre-build.bat" />
+    </Target>
 
 </Project>
