@@ -8,6 +8,8 @@ For Microsoft Powertoys Run, Open Jira tickets based on ticket number.
 
 `jira 123`
 
+![example screenshot search for numbers](/assets/images/mptr-jira.example.ticket.png)
+
 ### Opening a specific ticket
 
 `jira TICKET-123`
@@ -15,6 +17,8 @@ For Microsoft Powertoys Run, Open Jira tickets based on ticket number.
 ### Searching
 
 `jira my search query`
+
+![example screenshot search for numbers](/assets/images/mptr-jira.example.search.png)
 
 ## Installation
 
