@@ -1,4 +1,4 @@
 {
-  "UrlPrefix": "https://my.internal.server/",
-  "DefaultTicketPrefix": "TICKET"
+  "UrlPrefix": "https://my-jira-server.internal/",
+  "DefaultTicketPrefix": "TICKETNAME"
 }
