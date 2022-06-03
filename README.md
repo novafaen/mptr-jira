@@ -5,16 +5,19 @@ For Microsoft Powertoys Run, Open Jira tickets based on ticket number.
 ## Usage
 
 ### Opening a ticket with the default ticket prefix
+If query is number will use default ticket prefix.
 
 `jira 123`
 
 ![example screenshot search for numbers](/assets/images/mptr-jira.example.ticket.png)
 
 ### Opening a specific ticket
+If query contains a prefix before number, it will use that ticket prefix.
 
 `jira TICKET-123`
 
 ### Searching
+If query is other than numbers or ticket format, search will be suggested.
 
 `jira my search query`
 
@@ -26,7 +29,8 @@ Installation can be performed in different, manual, ways:
 
 Default Power Toys installation dir is `%PROGRAMFILES%\PowerToys`.
 
-**Easy (for most users):**
+**Easy** (for most users)
+
 Copy files to plugin folder
 
 1. Make sure Power Toys is not running.
@@ -35,20 +39,21 @@ Copy files to plugin folder
 4. ???
 5. Profit!
 
-**Harder (for developers that intend to change code):**
+**Harder** (for developers that intend to change code)
+
 Create symlink in your Power Toys Run plugin folder.
 
 1. Launch cmd as an administrator, and navigate to `[...]\PowerToys\modules\launcher\Plugins`.
 2. Create symlink with: `mklink /D mptr-jira DESTINATION`, where `DESTINATION` is the binary output folder where your Visual Studio compiles this code (example: `C:\git\mptr-jira\mptr-jira\bin\Release\net6.0-windows`)
 3. Build project (the Visual Studio project is configured to kill PowerToys.exe before build, and re-launch after).
 3. ???
-4. Profit
+4. Profit!
 
 ## Settings File
 
 `UrlPrefix` is the URL to your JIRA server. It must end with a slash character (`/`).
 
-`DefaultTicketPrefix`
+`DefaultTicketPrefix` is the default prexis that will be added no number queries.
 
 ```
 {
