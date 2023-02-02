@@ -29,19 +29,16 @@ Installation can be performed in different, manual, ways:
 
 Default Power Toys installation dir is `%PROGRAMFILES%\PowerToys`.
 
-**Easy** (for most users)
+**Easy** (for most users): Copy files to plugin folder
 
-Copy files to plugin folder
-
-1. Make sure Power Toys is not running.
-2. Copy files to your Power Toys Run plugin folder (`[...]\PowerToys\modules\launcher\Plugins`).
-3. Start Power Toys.
+1. Build the solution in Visual Studio.
+2. Copy the folder `<repo clone location>\mptr-jira\bin\Release\net6.0-windows` to your Power Toys Run plugins folder (`[...]\PowerToys\modules\launcher\Plugins`).
+3. Rename the `net6.0-windows` folder to something suitable like `mptr-jira`.
+3. Restart Power Toys.
 4. ???
 5. Profit!
 
-**Harder** (for developers that intend to change code)
-
-Create symlink in your Power Toys Run plugin folder.
+**Harder** (for developers that intend to change code): Create symlink in your Power Toys Run plugin folder.
 
 1. Launch cmd as an administrator, and navigate to `[...]\PowerToys\modules\launcher\Plugins`.
 2. Create symlink with: `mklink /D mptr-jira DESTINATION`, where `DESTINATION` is the binary output folder where your Visual Studio compiles this code (example: `C:\git\mptr-jira\mptr-jira\bin\Release\net6.0-windows`)
